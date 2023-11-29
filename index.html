@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mylophosia</title>
+    <style>
+      body {
+        background-color: #a9a9a9; /* Apple Gray */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+
+      .quote {
+        color: black;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .date {
+        color: black;
+        font-size: 18px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quote">
+      <!-- Random quote phrase will be inserted here -->
+    </div>
+    <div class="date">
+      <!-- Current date will be inserted here -->
+    </div>
+
+    <script>
+      // Array of random quote phrases
+      var quotes = [
+        "The only thing we have to fear is fear itself. - Franklin D. Roosevelt",
+        "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment. - Ralph Waldo Emerson",
+        "In three words I can sum up everything I've learned about life: it goes on. - Robert Frost",
+        "The only way to do great work is to love what you do. - Steve Jobs",
+        "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that. - Martin Luther King Jr.",
+        "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+        "It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change. - Charles Darwin",
+        "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+        "In the end, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King Jr.",
+        "The purpose of our lives is to be happy. - Dalai Lama",
+        "Life is what happens when you're busy making other plans. - Allen Sanders",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+        "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort",
+        "Don't count the days, make the days count. - Muhammad Ali",
+        "You miss 100% of the shots you don't take. - Wayne Gretzky",
+        "The only person you are destined to become is the person you decide to be. - Ralph Waldo Emerson",
+        "The best revenge is to be unlike him who performed the injustice. - Marcus Aurelius",
+        "A room without books is like a body without a soul. - Marcus Tullius Cicero",
+        "The only true wisdom is in knowing you know nothing. - Socrates",
+        "It does not matter how slowly you go, as long as you do not stop. - Confucius",
+        "The more I learn, the more I realize how much I don't know. - Albert Einstein",
+        "In the middle of difficulty lies opportunity. - Albert Einstein",
+        "If you want to lift yourself up, lift up someone else. - Booker T. Washington",
+        "Success is not in what you have, but who you are. - Bo Bennett",
+        "The purpose of our lives is to be happy. - Dalai Lama",
+        "In the end, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King Jr.",
+        "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+        "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort",
+        "Don't count the days, make the days count. - Muhammad Ali",
+        "You miss 100% of the shots you don't take. - Wayne Gretzky",
+        "The only person you are destined to become is the person you decide to be. - Ralph Waldo Emerson",
+        "The best revenge is to be unlike him who performed the injustice. - Marcus Aurelius",
+        "A room without books is like a body without a soul. - Marcus Tullius Cicero",
+        "The only true wisdom is in knowing you know nothing. - Socrates",
+        "It does not matter how slowly you go, as long as you do not stop. - Confucius",
+        "The more I learn, the more I realize how much I don't know. - Albert Einstein",
+        "In the middle of difficulty lies opportunity. - Albert Einstein",
+        "If you want to lift yourself up, lift up someone else. - Booker T. Washington",
+        "Success is not in what you have, but who you are. - Bo Bennett",
+        "The only way to do great work is to love what you do. - Steve Jobs",
+        "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that. - Martin Luther King Jr.",
+        "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+        "It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change. - Charles Darwin",
+        "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+        "In the end, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King Jr.",
+        "The purpose of our lives is to be happy. - Dalai Lama",
+        "Life is what happens when you're busy making other plans. - Allen Sanders",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+        "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort",
+        "Don't count the days, make the days count. - Muhammad Ali",
+        "You miss 100% of the shots you don't take. - Wayne Gretzky",
+        "The only person you are destined to become is the person you decide to be. - Ralph Waldo Emerson",
+        "The best revenge is to be unlike him who performed the injustice. - Marcus Aurelius",
+        "A room without books is like a body without a soul. - Marcus Tullius Cicero",
+        "The only true wisdom is in knowing you know nothing. - Socrates",
+        "It does not matter how slowly you go, as long as you do not stop. - Confucius",
+        "The more I learn, the more I realize how much I don't know. - Albert Einstein",
+        "In the middle of difficulty lies opportunity. - Albert Einstein",
+        "If you want to lift yourself up, lift up someone else. - Booker T. Washington",
+        "Success is not in what you have, but who you are. - Bo Bennett",
+        "The only way to do great work is to love what you do. - Steve Jobs",
+        "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that. - Martin Luther King Jr.",
+        "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+        "It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change. - Charles Darwin",
+        "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+        "In the end, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King Jr.",
+        "The purpose of our lives is to be happy. - Dalai Lama",
+        "Life is what happens when you're busy making other plans. - Allen Sanders",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+        "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort",
+        "Don't count the days, make the days count. - Muhammad Ali",
+        "You miss 100% of the shots you don't take. - Wayne Gretzky",
+        "The only person you are destined to become is the person you decide to be. - Ralph Waldo Emerson",
+        "The best revenge is to be unlike him who performed the injustice. - Marcus Aurelius",
+        "A room without books is like a body without a soul. - Marcus Tullius Cicero",
+        "The only true wisdom is in knowing you know nothing. - Socrates",
+        "It does not matter how slowly you go, as long as you do not stop. - Confucius",
+        "The more I learn, the more I realize how much I don't know. - Albert Einstein",
+        "In the middle of difficulty lies opportunity. - Albert Einstein",
+        "If you want to lift yourself up, lift up someone else. - Booker T. Washington",
+        "Success is not in what you have, but who you are. - Bo Bennett",
+        //... (devam eden alıntılar)
+      ];
+
+      // Function to get a random quote from the array
+      function getRandomQuote() {
+        var randomIndex = Math.floor(Math.random() * quotes.length);
+        return quotes[randomIndex];
+      }
+
+      // Function to get the current date in the format "Month Day, Year"
+      function getCurrentDate() {
+        var currentDate = new Date();
+        var options = { year: "numeric", month: "long", day: "numeric" };
+        return currentDate.toLocaleDateString("en-US", options);
+      }
+
+      // Update the quote and date elements with random quote and current date
+      document.addEventListener("DOMContentLoaded", function () {
+        var quoteElement = document.querySelector(".quote");
+        var dateElement = document.querySelector(".date");
+
+        quoteElement.textContent = getRandomQuote();
+        dateElement.textContent = getCurrentDate();
+      });
+    </script>
+  </body>
+</html>
